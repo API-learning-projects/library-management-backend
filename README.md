@@ -18,6 +18,7 @@ It's purpose is to build a REST API that allows users to buy, borrow or sell boo
 - GRASP
 
 ## Requirements
+
 - User must be able to get all available books.
 - User must be able to get information about a single book (Title, description, picture, price?, borrow?, categorie, difficulty, etc.).
 - User must be able to filter books (categorie, buy/borrow/sell, difficulty, average reading duration, etc.).

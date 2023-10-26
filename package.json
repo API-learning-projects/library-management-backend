@@ -1,0 +1,11 @@
+{
+  "name": "library-management",
+  "version": "1.0.0",
+  "description": "Learning project for C# and .NET REST API",
+  "main": "index.js",
+  "scripts": {
+    "dev": "docker-compose up -d"
+  },
+  "author": "Justin Slijkhuis",
+  "license": "ISC"
+}
