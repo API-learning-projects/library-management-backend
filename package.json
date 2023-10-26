@@ -4,7 +4,9 @@
   "description": "Learning project for C# and .NET REST API",
   "main": "index.js",
   "scripts": {
-    "dev": "docker-compose up -d"
+    "dev": "docker-compose up -d",
+    "start": "dotnet run",
+    "test": "dotnet test"
   },
   "author": "Justin Slijkhuis",
   "license": "ISC"

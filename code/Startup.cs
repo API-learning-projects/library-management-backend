@@ -24,12 +24,6 @@ namespace LibraryManagement
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            // Provides more detailed error messages
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
             // Forces HTTPS
             app.UseHttpsRedirection();
 
