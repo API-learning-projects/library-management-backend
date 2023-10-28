@@ -6,12 +6,19 @@ namespace LibraryManagement.Services
     {
         public List<AuthorDTO> GetAll()
         {
-            throw new System.NotImplementedException();
+            List<AuthorDTO> authors = new()
+            {
+                new AuthorDTO(1),
+                new AuthorDTO(2),
+                new AuthorDTO(3),
+                new AuthorDTO(4),
+            };
+            return authors;
         }
 
         public AuthorDTO GetById(int id)
         {
-            return new AuthorDTO();
+            return new AuthorDTO(id);
         }
     }
 }

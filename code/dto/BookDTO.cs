@@ -2,7 +2,7 @@ namespace LibraryManagement.DTO
 {
     public class BookDTO
     {
-        private int Id { get; set; }
+        public int Id { get; set; }
 
         public BookDTO(int id)
         {

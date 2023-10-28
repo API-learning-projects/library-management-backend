@@ -16,12 +16,5 @@ namespace LibraryManagement.Controllers
             List<GenreDTO> authors = genreService.GetAll();
             return Ok(authors);
         }
-
-        [HttpGet("{id}")]
-        public IActionResult Get(int id)
-        {
-            GenreDTO author = genreService.GetById(id);
-            return Ok(author);
-        }
     }
 }
