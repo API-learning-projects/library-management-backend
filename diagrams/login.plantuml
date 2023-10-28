@@ -1,0 +1,11 @@
+@startuml login
+-> AccountService: token = login(login, password)
+AccountService -> AccountRepository: account = findByUsernameOrEmail(login)
+AccountService -> Account: hashedPassword = getPassword()
+AccountService -> BCryptService: validLogin = check(password, hashedPassword)
+alt valid login was given
+    AccountService -> Account: id = getId()
+    AccountService -> JWTService: token = generateToken(id)
+else invalid login was given
+    AccountService -> AccountService: throw new InvalidLoginException()
+end

@@ -1,0 +1,10 @@
+@startuml register
+-> AccountService: register(username, email, password)
+AccountService -> AccountRepository: accountExists = existsByUsernameOrEmail(username)
+alt account does not exist already
+    AccountService -> BCryptService: hashedPassword = hash(password)
+    AccountService --> Account: account = new Account(username, email, hashedPassword)
+    AccountService -> AccountRepository: save(account)
+else account already exists
+    AccountService -> AccountService: throw new AccountAlreadyExistsException()
+end
