@@ -2,16 +2,16 @@ using LibraryManagement.DTO;
 
 namespace LibraryManagement.Services
 {
-    public class BookService
-    {        
-        public List<BookDTO> GetAll()
+    public class GenreService
+    {
+        public List<GenreDTO> GetAll()
         {
             throw new System.NotImplementedException();
         }
 
-        public BookDTO GetById(int id)
+        public GenreDTO GetById(int id)
         {
-            return new BookDTO(id);
+            return new GenreDTO();
         }
     }
 }

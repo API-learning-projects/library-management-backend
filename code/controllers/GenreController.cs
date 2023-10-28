@@ -6,22 +6,22 @@ namespace LibraryManagement.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class BookController : ControllerBase
+    public class GenreController : ControllerBase
     {
-        private readonly BookService bookService = new();
+        private readonly GenreService genreService = new();
 
         [HttpGet]
         public IActionResult Get()
         {
-            List<BookDTO> books = bookService.GetAll();
-            return Ok(books);
+            List<GenreDTO> authors = genreService.GetAll();
+            return Ok(authors);
         }
 
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            BookDTO book = bookService.GetById(id);
-            return Ok(book);
+            GenreDTO author = genreService.GetById(id);
+            return Ok(author);
         }
     }
 }

@@ -1,0 +1,32 @@
+@startuml database "Library" {
+/' Settings '/
+hide circle
+hide empty methods
+skinparam linetype polyline
+
+/' Entities '/
+entity Book {
+    id : int **<<PI>>**
+    title : string
+}
+
+entity Author {
+    id : int **<<PI>>**
+    name : string
+}
+
+entity Genre {
+    name : string **<<PI>>**
+}
+
+entity Account {
+    id : int **<<PI>>**
+    name : string
+    email : string
+    password : string
+}
+
+/' Relationships '/
+Author ||-right-o{ Book
+Genre ||-left-o{ Book
+Account }o--o{ Book
