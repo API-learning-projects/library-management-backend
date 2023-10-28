@@ -11,7 +11,6 @@ It's purpose is to build a REST API that allows users to buy, borrow or sell boo
 - Entity Framework
 - .NET testing
 - PostgreSQL
-- DevOps
 - UML diagrams
 - Patterns
 - SOLID
@@ -32,4 +31,7 @@ It's purpose is to build a REST API that allows users to buy, borrow or sell boo
 - User must be able to get a list of all their borrowed books (borrow date, return date, status, etc.).
 - User must be able to get a list of all their bought books.
 - User must be able to get a list of all their sold books.
+- User must be able to get all authors.
+- User must be able to get information of a single author.
+- User must be able to get all genres.
 - Code coverage must be larger than 80%.
