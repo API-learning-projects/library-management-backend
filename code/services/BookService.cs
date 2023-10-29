@@ -1,24 +1,25 @@
 using LibraryManagement.DTO;
+using LibraryManagement.Data.Models;
+using LibraryManagement.Data.Repositories;
+using Microsoft.AspNetCore.Http;
 
 namespace LibraryManagement.Services
 {
     public class BookService
-    {        
+    {
         public List<BookDTO> GetAll()
         {
             List<BookDTO> books = new()
             {
-                new BookDTO(1),
-                new BookDTO(2),
-                new BookDTO(3),
-                new BookDTO(4),
+                new BookDTO("The Lord of the Rings"),
+                new BookDTO("The Hobbit"),
             };
             return books;
         }
 
         public BookDTO GetById(int id)
         {
-            return new BookDTO(id);
+            return new BookDTO("The Lord of the Rings");
         }
     }
 }

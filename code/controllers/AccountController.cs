@@ -1,16 +1,33 @@
 using Microsoft.AspNetCore.Mvc;
+using LibraryManagement.Services;
+using LibraryManagement.DTO;
 
 namespace LibraryManagement.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class AccountController : ControllerBase
+    public class AccountController : ControllerUtils
     {
-        [HttpGet]
-        public IActionResult Get()
+        private readonly AccountService accountService = new();
+
+        [HttpPost("login")]
+        public IActionResult Login()
         {
-            // Your logic here
-            return Ok("Account details");
+            string? authorization = Request.Headers["Authorization"];
+            
+            return RunLogic(() => {
+                AccountDTO accountDTO = accountService.Login(authorization);
+                return Ok(accountDTO);
+            });
+        }
+
+        [HttpPost("register")]
+        public IActionResult Register()
+        {
+            return RunLogic(() => {
+                accountService.Register();
+                return Ok();
+            });
         }
     }
 }

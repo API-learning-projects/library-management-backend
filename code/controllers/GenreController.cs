@@ -6,15 +6,17 @@ namespace LibraryManagement.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class GenreController : ControllerBase
+    public class GenreController : ControllerUtils
     {
         private readonly GenreService genreService = new();
 
         [HttpGet]
         public IActionResult Get()
         {
-            List<GenreDTO> authors = genreService.GetAll();
-            return Ok(authors);
+            return RunLogic(() => {
+                List<GenreDTO> genres = genreService.GetAll();
+                return Ok(genres);
+            });
         }
     }
 }
