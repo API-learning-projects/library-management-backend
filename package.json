@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "docker-compose up -d",
     "start": "dotnet run",
-    "test": "dotnet test"
+    "test": "dotnet test",
+    "migrate": "dotnet ef migrations add migration",
+    "updateDB": "dotnet ef database update"
   },
   "author": "Justin Slijkhuis",
   "license": "ISC"

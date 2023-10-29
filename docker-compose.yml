@@ -9,8 +9,3 @@ services:
       POSTGRES_PASSWORD: admin
     ports:
       - "5432:5432"
-    volumes:
-      - sql:/var/lib/postgresql/data
-
-volumes:
-  sql:

@@ -7,26 +7,29 @@ skinparam linetype polyline
 /' Entities '/
 entity Book {
     id : int **<<PI>>**
-    title : string
+    title : varchar
+    image: bytea
 }
 
 entity Author {
     id : int **<<PI>>**
-    name : string
+    name : varchar
 }
 
 entity Genre {
-    name : string **<<PI>>**
+    name : varchar **<<PI>>**
 }
 
 entity Account {
     id : int **<<PI>>**
-    name : string
-    email : string
-    password : string
+    name : varchar
+    email : varchar
+    password : varchar
 }
 
 /' Relationships '/
-Author ||-right-o{ Book
-Genre ||-left-o{ Book
-Account }o--o{ Book
+Author ||-right-o{ Book : "are written by"
+Genre ||--o{ Book: "are of"
+Account }o-left-o{ Book : "Sold"
+Account }o-left-o{ Book : "Bought"
+Account }o-left-o{ Book : "Borrowed"

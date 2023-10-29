@@ -2,11 +2,11 @@ namespace LibraryManagement.DTO
 {
     public class AuthorDTO
     {
-        public int Id { get; set; }
+        public string Name { get; set; }
 
-        public AuthorDTO(int id)
+        public AuthorDTO(string name)
         {
-            this.Id = id;
+            Name = name;
         }
     }
 }

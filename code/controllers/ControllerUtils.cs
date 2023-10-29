@@ -5,15 +5,15 @@ namespace LibraryManagement.Controllers
 {
     public class ControllerUtils : ControllerBase
     {
-        public static IActionResult RunLogic(Func<IActionResult> func)
+        public IActionResult RunLogic(Func<IActionResult> func)
         {
             try
             {
-                return new OkObjectResult(func());
+                return func();
             }
             catch (BadHttpRequestException e)
             {
-                return new BadRequestObjectResult(e.Message);
+                return BadRequest(e.Message);
             }
         }
     }

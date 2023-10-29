@@ -1,25 +1,31 @@
 using LibraryManagement.DTO;
+using LibraryManagement.Data;
 using LibraryManagement.Data.Models;
-using LibraryManagement.Data.Repositories;
 using Microsoft.AspNetCore.Http;
 
 namespace LibraryManagement.Services
 {
     public class BookService
     {
+        private readonly ApplicationDbContext applicationDbContext = new();
+
         public List<BookDTO> GetAll()
         {
-            List<BookDTO> books = new()
+            List<BookModel> books = applicationDbContext.Books.ToList();
+
+            List<BookDTO> bookDTOs = new();
+            foreach (BookModel book in books)
             {
-                new BookDTO("The Lord of the Rings"),
-                new BookDTO("The Hobbit"),
-            };
-            return books;
+                bookDTOs.Add(new BookDTO(book.Title));
+            }
+
+            return bookDTOs;
         }
 
         public BookDTO GetById(int id)
         {
-            return new BookDTO("The Lord of the Rings");
+            BookModel book = applicationDbContext.Books.Find(id) ?? throw new BadHttpRequestException("Book does not exist");
+            return new BookDTO(book.Title);
         }
     }
 }

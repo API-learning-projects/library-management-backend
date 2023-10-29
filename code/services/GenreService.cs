@@ -1,28 +1,25 @@
 using LibraryManagement.DTO;
+using LibraryManagement.Data;
+using LibraryManagement.Data.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace LibraryManagement.Services
 {
     public class GenreService
     {
+        private readonly ApplicationDbContext applicationDbContext = new();
+
         public List<GenreDTO> GetAll()
         {
-            List<GenreDTO> genres = new()
+            List<GenreModel> genres = applicationDbContext.Genres.ToList();
+
+            List<GenreDTO> genreDTOs = new();
+            foreach (GenreModel genre in genres)
             {
-                new GenreDTO("Fantasy"),
-                new GenreDTO("Science Fiction"),
-                new GenreDTO("Horror"),
-                new GenreDTO("Thriller"),
-                new GenreDTO("Mystery"),
-                new GenreDTO("Historical Fiction"),
-                new GenreDTO("Romance"),
-                new GenreDTO("Western"),
-                new GenreDTO("Dystopian"),
-                new GenreDTO("Contemporary"),
-                new GenreDTO("Memoir"),
-                new GenreDTO("Cooking"),
-                new GenreDTO("Art")
-            };
-            return genres;
+                genreDTOs.Add(new GenreDTO(genre.Name));
+            }
+
+            return genreDTOs;
         }
     }
 }

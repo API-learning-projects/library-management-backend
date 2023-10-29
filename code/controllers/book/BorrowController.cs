@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using LibraryManagement.Services.Book;
 using LibraryManagement.DTO;
-using static LibraryManagement.Controllers.ControllerUtils;
 
 namespace LibraryManagement.Controllers.Book
 {
