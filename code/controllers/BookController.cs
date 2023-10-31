@@ -19,7 +19,7 @@ namespace LibraryManagement.Controllers
         public IActionResult GetAllBooks()
         {
             return RunLogic(() => {
-                List<BookDTO> books = bookService.GetAll();
+                List<BookOutgoingDTO> books = bookService.GetAll();
                 return Ok(books);
             });
         }
@@ -28,7 +28,7 @@ namespace LibraryManagement.Controllers
         public IActionResult GetBookById(int id)
         {
             return RunLogic(() => {
-                BookDTO book = bookService.GetById(id);
+                BookOutgoingDTO book = bookService.GetById(id);
                 return Ok(book);
             });
         }

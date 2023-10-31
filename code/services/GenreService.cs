@@ -13,14 +13,14 @@ namespace LibraryManagement.Services
             this.applicationDbContext = applicationDbContext;
         }
 
-        public List<GenreDTO> GetAll()
+        public List<GenreOutgoingDTO> GetAll()
         {
             List<GenreModel> genres = applicationDbContext.Genres.ToList();
 
-            List<GenreDTO> genreDTOs = new();
+            List<GenreOutgoingDTO> genreDTOs = new();
             foreach (GenreModel genre in genres)
             {
-                genreDTOs.Add(new GenreDTO(genre.Name));
+                genreDTOs.Add(new GenreOutgoingDTO(genre.Name));
             }
 
             return genreDTOs;

@@ -19,7 +19,7 @@ namespace LibraryManagement.Controllers.Book
         public IActionResult Get()
         {
             return RunLogic(() => {
-                List<BookDTO> filters = filterService.GetBooks();
+                List<BookOutgoingDTO> filters = filterService.GetBooks();
                 return Ok(filters);
             });
         }

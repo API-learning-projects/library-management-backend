@@ -1,10 +1,10 @@
 namespace LibraryManagement.DTO
 {
-    public class BookDTO
+    public class BookOutgoingDTO
     {
         public string Title { get; set; }
 
-        public BookDTO(string title)
+        public BookOutgoingDTO(string title)
         {
             this.Title = title;
         }

@@ -19,7 +19,7 @@ namespace LibraryManagement.Controllers
         public IActionResult Get()
         {
             return RunLogic(() => {
-                List<AuthorDTO> authors = authorService.GetAll();
+                List<AuthorOutgoingDTO> authors = authorService.GetAll();
                 return Ok(authors);
             });
         }
@@ -28,7 +28,7 @@ namespace LibraryManagement.Controllers
         public IActionResult Get(int id)
         {
             return RunLogic(() => {
-                AuthorDTO author = authorService.GetById(id);
+                AuthorOutgoingDTO author = authorService.GetById(id);
                 return Ok(author);
             });
         }

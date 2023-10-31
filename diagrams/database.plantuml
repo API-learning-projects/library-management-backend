@@ -21,8 +21,7 @@ entity Genre {
 }
 
 entity Account {
-    id : int **<<PI>>**
-    name : varchar
+    name : varchar **<<PI>>**
     email : varchar
     password : varchar
 }

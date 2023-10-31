@@ -21,16 +21,20 @@ namespace LibraryManagement.Controllers
             string? authorization = Request.Headers["Authorization"];
             
             return RunLogic(() => {
-                AccountDTO accountDTO = accountService.Login(authorization);
+                AccountOutgoingDTO accountDTO = accountService.Login(authorization);
                 return Ok(accountDTO);
             });
         }
 
         [HttpPost("register")]
-        public IActionResult Register()
+        public IActionResult Register([FromBody] RegisterIncomingDTO register)
         {
+            string username = register.Username;
+            string password = register.Password;
+            string email = register.Email;
+
             return RunLogic(() => {
-                accountService.Register();
+                accountService.Register(username, password, email);
                 return Ok();
             });
         }

@@ -14,23 +14,23 @@ namespace LibraryManagement.Services
             this.applicationDbContext = applicationDbContext;
         }
 
-        public List<AuthorDTO> GetAll()
+        public List<AuthorOutgoingDTO> GetAll()
         {
             List<AuthorModel> authors = applicationDbContext.Authors.ToList();
 
-            List<AuthorDTO> authorDTOs = new();
+            List<AuthorOutgoingDTO> authorDTOs = new();
             foreach (AuthorModel author in authors)
             {
-                authorDTOs.Add(new AuthorDTO(author.Name));
+                authorDTOs.Add(new AuthorOutgoingDTO(author.Name));
             }
 
             return authorDTOs;
         }
 
-        public AuthorDTO GetById(int id)
+        public AuthorOutgoingDTO GetById(int id)
         {
             AuthorModel author = applicationDbContext.Authors.Find(id) ?? throw new BadHttpRequestException("Author does not exist");
-            return new AuthorDTO(author.Name);
+            return new AuthorOutgoingDTO(author.Name);
         }
     }
 }

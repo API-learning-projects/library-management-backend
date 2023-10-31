@@ -21,7 +21,7 @@ namespace LibraryManagement.Controllers.Book
             string? authentication = Request.Headers["Authorization"];
 
             return RunLogic(() => {
-                List<BookDTO> books = bookService.GetUserBoughtBooks(authentication);
+                List<BookOutgoingDTO> books = bookService.GetUserBoughtBooks(authentication);
                 return Ok(books);
             });
         }

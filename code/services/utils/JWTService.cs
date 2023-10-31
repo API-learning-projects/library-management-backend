@@ -6,22 +6,22 @@ namespace LibraryManagement.Services
 {
     public class JWTService
     {        
-        public string GenerateToken(int id)
+        public string GenerateToken(string username)
         {
             return JwtBuilder.Create()
                 .WithSecret("secret")
                 .AddClaim("exp", DateTimeOffset.UtcNow.AddHours(1).ToUnixTimeSeconds())
-                .AddClaim("id", id)
+                .AddClaim("username", username)
                 .Encode();
         }
 
-        public int GetIdFromToken(string token)
+        public string GetUsernameFromToken(string token)
         {
             try {
                 return JwtBuilder.Create()
                     .WithSecret("secret")
                     .MustVerifySignature()
-                    .Decode<int>(token);
+                    .Decode<string>(token);
             } catch (TokenExpiredException) {
                 throw new BadHttpRequestException("Token expired");
             } catch {

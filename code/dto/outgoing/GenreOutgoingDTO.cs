@@ -1,9 +1,9 @@
 namespace LibraryManagement.DTO
 {
-    public class GenreDTO
+    public class GenreOutgoingDTO
     {
         public string Genre { get; set; }
-        public GenreDTO(string genre)
+        public GenreOutgoingDTO(string genre)
         {
             this.Genre = genre;
         }

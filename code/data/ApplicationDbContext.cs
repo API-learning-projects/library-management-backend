@@ -9,10 +9,6 @@ namespace LibraryManagement.Data
         public DbSet<AuthorModel> Authors { get; set; }
         public DbSet<BookModel> Books { get; set; }
         public DbSet<GenreModel> Genres { get; set; }
-        
-        // public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
-        // {
-        // }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

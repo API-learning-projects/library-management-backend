@@ -17,7 +17,7 @@ namespace LibraryManagement.Services
             this.bCryptService = bCryptService;
         }
 
-        public AccountDTO Login(string? authorization)
+        public AccountOutgoingDTO Login(string? authorization)
         {
             if (authorization == null) {
                 throw new BadHttpRequestException("No authorization header found");
@@ -43,13 +43,22 @@ namespace LibraryManagement.Services
                 throw new BadHttpRequestException("Invalid username or password");
             }
 
-            string token = jwtService.GenerateToken(account.Id);
+            string token = jwtService.GenerateToken(account.Username);
 
-            return new AccountDTO(token);
+            return new AccountOutgoingDTO(token);
         }
 
-        public void Register()
+        public void Register(string username, string password, string email)
         {
+            if (applicationDbContext.Accounts.Find(username) != null) {
+                throw new BadHttpRequestException("Username already exists");
+            }
+
+            string hashedPassword = bCryptService.Hash(password);
+
+            AccountModel account = new AccountModel(username, hashedPassword, email);
+            applicationDbContext.Accounts.Add(account);
+            applicationDbContext.SaveChanges();
         }
     }
 }

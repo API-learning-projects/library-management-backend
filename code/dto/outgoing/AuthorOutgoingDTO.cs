@@ -1,10 +1,10 @@
 namespace LibraryManagement.DTO
 {
-    public class AuthorDTO
+    public class AuthorOutgoingDTO
     {
         public string Name { get; set; }
 
-        public AuthorDTO(string name)
+        public AuthorOutgoingDTO(string name)
         {
             Name = name;
         }

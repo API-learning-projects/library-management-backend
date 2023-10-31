@@ -1,9 +1,9 @@
 namespace LibraryManagement.DTO
 {
-    public class AccountDTO
+    public class AccountOutgoingDTO
     {
         public string Token { get; set; }
-        public AccountDTO(string token)
+        public AccountOutgoingDTO(string token)
         {
             Token = token;
         }

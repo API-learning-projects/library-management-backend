@@ -19,7 +19,7 @@ namespace LibraryManagement.Controllers
         public IActionResult Get()
         {
             return RunLogic(() => {
-                List<GenreDTO> genres = genreService.GetAll();
+                List<GenreOutgoingDTO> genres = genreService.GetAll();
                 return Ok(genres);
             });
         }

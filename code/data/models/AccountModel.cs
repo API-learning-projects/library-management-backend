@@ -5,13 +5,15 @@ namespace LibraryManagement.Data.Models
     public class AccountModel
     {
         [Key]
-        public int Id { get; set; }
         public string Username { get; set; }
-        public string Email { get; set; }
         public string Password { get; set; }
+        public string Email { get; set; }
         
-        public AccountModel()
+        public AccountModel(string username, string password, string email)
         {
+            Username = username;
+            Password = password;
+            Email = email;
         }
     }
 }
