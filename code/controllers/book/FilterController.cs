@@ -8,7 +8,12 @@ namespace LibraryManagement.Controllers.Book
     [Route("[controller]")]
     public class FilterController : ControllerUtils
     {
-        private readonly FilterService filterService = new();
+        private readonly FilterService filterService;
+
+        public FilterController(FilterService filterService)
+        {
+            this.filterService = filterService;
+        }
 
         [HttpGet]
         public IActionResult Get()

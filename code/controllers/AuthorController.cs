@@ -8,7 +8,12 @@ namespace LibraryManagement.Controllers
     [Route("[controller]")]
     public class AuthorController : ControllerUtils
     {
-        private readonly AuthorService authorService = new();
+        private readonly AuthorService authorService;
+
+        public AuthorController(AuthorService authorService)
+        {
+            this.authorService = authorService;
+        }
 
         [HttpGet]
         public IActionResult Get()

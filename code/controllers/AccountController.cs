@@ -8,7 +8,12 @@ namespace LibraryManagement.Controllers
     [Route("[controller]")]
     public class AccountController : ControllerUtils
     {
-        private readonly AccountService accountService = new();
+        private readonly AccountService accountService;
+
+        public AccountController(AccountService accountService)
+        {
+            this.accountService = accountService;
+        }
 
         [HttpPost("login")]
         public IActionResult Login()

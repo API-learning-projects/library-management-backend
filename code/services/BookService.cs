@@ -7,7 +7,12 @@ namespace LibraryManagement.Services
 {
     public class BookService
     {
-        private readonly ApplicationDbContext applicationDbContext = new();
+        private readonly ApplicationDbContext applicationDbContext;
+
+        public BookService(ApplicationDbContext applicationDbContext)
+        {
+            this.applicationDbContext = applicationDbContext;
+        }
 
         public List<BookDTO> GetAll()
         {

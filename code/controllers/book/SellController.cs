@@ -8,7 +8,12 @@ namespace LibraryManagement.Controllers.Book
     [Route("book/[controller]")]
     public class SellController : ControllerUtils
     {
-        private readonly SellService bookService = new();
+        private readonly SellService bookService;
+
+        public SellController(SellService sellService)
+        {
+            this.bookService = sellService;
+        }
 
         [HttpGet]
         public IActionResult GetUserSoldBooks()

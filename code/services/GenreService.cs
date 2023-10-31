@@ -1,13 +1,17 @@
 using LibraryManagement.DTO;
 using LibraryManagement.Data;
 using LibraryManagement.Data.Models;
-using Microsoft.AspNetCore.Http;
 
 namespace LibraryManagement.Services
 {
     public class GenreService
     {
-        private readonly ApplicationDbContext applicationDbContext = new();
+        private readonly ApplicationDbContext applicationDbContext;
+
+        public GenreService(ApplicationDbContext applicationDbContext)
+        {
+            this.applicationDbContext = applicationDbContext;
+        }
 
         public List<GenreDTO> GetAll()
         {

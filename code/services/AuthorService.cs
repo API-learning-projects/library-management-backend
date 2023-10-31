@@ -7,7 +7,12 @@ namespace LibraryManagement.Services
 {
     public class AuthorService
     {
-        private readonly ApplicationDbContext applicationDbContext = new();
+        private readonly ApplicationDbContext applicationDbContext;
+
+        public AuthorService(ApplicationDbContext applicationDbContext)
+        {
+            this.applicationDbContext = applicationDbContext;
+        }
 
         public List<AuthorDTO> GetAll()
         {

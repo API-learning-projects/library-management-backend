@@ -8,7 +8,12 @@ namespace LibraryManagement.Controllers.Book
     [Route("book/[controller]")]
     public class BorrowController : ControllerUtils
     {
-        private readonly BorrowService bookService = new();
+        private readonly BorrowService bookService;
+
+        public BorrowController(BorrowService borrowService)
+        {
+            this.bookService = borrowService;
+        }
 
         [HttpGet]
         public IActionResult GetUserBorrowedBooks()

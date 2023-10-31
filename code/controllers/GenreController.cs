@@ -8,7 +8,12 @@ namespace LibraryManagement.Controllers
     [Route("[controller]")]
     public class GenreController : ControllerUtils
     {
-        private readonly GenreService genreService = new();
+        private readonly GenreService genreService;
+
+        public GenreController(GenreService genreService)
+        {
+            this.genreService = genreService;
+        }
 
         [HttpGet]
         public IActionResult Get()

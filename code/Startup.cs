@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using LibraryManagement.Data;
+using LibraryManagement.Services;
+using LibraryManagement.Services.Book;
 
 namespace LibraryManagement
 {
@@ -13,6 +15,22 @@ namespace LibraryManagement
         {
             services.AddDbContext<ApplicationDbContext>();
             services.AddControllers();
+
+            /* Services */
+            services.AddSingleton<AccountService>();
+            services.AddSingleton<AuthorService>();
+            services.AddSingleton<BookService>();
+            services.AddSingleton<GenreService>();
+
+            // book
+            services.AddSingleton<BorrowService>();
+            services.AddSingleton<BuyService>();
+            services.AddSingleton<FilterService>();
+            services.AddSingleton<SellService>();
+
+            // utils
+            services.AddSingleton<BCryptService>();
+            services.AddSingleton<JWTService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
