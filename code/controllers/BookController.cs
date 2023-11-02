@@ -16,10 +16,10 @@ namespace LibraryManagement.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllBooks()
+        public IActionResult GetAllBooks([FromQuery] int page)
         {
             return RunLogic(() => {
-                List<BookOutgoingDTO> books = bookService.GetAll();
+                List<BookOutgoingDTO> books = bookService.GetAll(page);
                 return Ok(books);
             });
         }

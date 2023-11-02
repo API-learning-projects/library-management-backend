@@ -7,6 +7,8 @@ namespace LibraryManagement.Services
 {
     public class BookService
     {
+        private readonly int AMOUNT_PER_PAGE = 10;
+
         private readonly ApplicationDbContext applicationDbContext;
 
         public BookService(ApplicationDbContext applicationDbContext)
@@ -14,9 +16,12 @@ namespace LibraryManagement.Services
             this.applicationDbContext = applicationDbContext;
         }
 
-        public List<BookOutgoingDTO> GetAll()
+        public List<BookOutgoingDTO> GetAll(int page)
         {
-            List<BookModel> books = applicationDbContext.Books.ToList();
+            List<BookModel> books = applicationDbContext.Books
+                .Skip(AMOUNT_PER_PAGE * page)
+                .Take(AMOUNT_PER_PAGE)
+                .ToList();
 
             List<BookOutgoingDTO> bookDTOs = new();
             foreach (BookModel book in books)
