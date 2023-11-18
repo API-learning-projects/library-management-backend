@@ -12,7 +12,9 @@ It's purpose is to build a REST API that allows users to buy, borrow or sell boo
 - .NET testing
 - PostgreSQL
 - MongoDB
+- Redis
 - Caching
+- Rate limiting
 - UML diagrams
 - Patterns
 - SOLID
