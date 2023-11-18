@@ -11,6 +11,8 @@ It's purpose is to build a REST API that allows users to buy, borrow or sell boo
 - Entity Framework
 - .NET testing
 - PostgreSQL
+- MongoDB
+- Caching
 - UML diagrams
 - Patterns
 - SOLID
