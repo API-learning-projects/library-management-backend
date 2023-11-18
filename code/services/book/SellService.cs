@@ -5,7 +5,7 @@ namespace LibraryManagement.Services.Book
 {
     public class SellService
     {
-        public List<BookDTO> GetUserSoldBooks(string? authentication)
+        public List<BookOutgoingDTO> GetUserSoldBooks(string? authentication)
         {
             if (authentication == null) {
                 throw new BadHttpRequestException("No authentication header found");
@@ -15,7 +15,7 @@ namespace LibraryManagement.Services.Book
                 throw new BadHttpRequestException("Authentication header is not bearer");
             }
 
-            return new List<BookDTO>();
+            return new List<BookOutgoingDTO>();
         }
         
         public void SellBook(int id, string? authentication)

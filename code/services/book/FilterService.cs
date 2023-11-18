@@ -5,9 +5,9 @@ namespace LibraryManagement.Services.Book
 {
     public class FilterService
     {
-        public List<BookDTO> GetBooks()
+        public List<BookOutgoingDTO> GetBooks()
         {
-            return new List<BookDTO>();
+            return new List<BookOutgoingDTO>();
         }
     }
 }

@@ -16,6 +16,8 @@ namespace LibraryManagement
             services.AddDbContext<ApplicationDbContext>();
             services.AddControllers();
 
+            // TODO: interface voor dependency injection
+
             /* Services */
             services.AddSingleton<AccountService>();
             services.AddSingleton<AuthorService>();

@@ -7,7 +7,7 @@
     "dev": "docker-compose up -d",
     "start": "dotnet run",
     "test": "dotnet test",
-    "migrate": "dotnet ef migrations add migration",
+    "migrate": "echo W.I.P.",
     "updateDB": "dotnet ef database update"
   },
   "author": "Justin Slijkhuis",
