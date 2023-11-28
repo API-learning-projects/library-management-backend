@@ -1,3 +1,5 @@
+![status](https://badgen.net/static/status/ongoing/)
+
 # Library-management
 
 This repository contains code of a learning project called: "Library management".
