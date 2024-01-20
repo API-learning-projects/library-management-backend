@@ -19,7 +19,7 @@ namespace LibraryManagement.Services
         public List<BookOutgoingDTO> GetAll(int page)
         {
             List<BookModel> books = applicationDbContext.Books
-                .Skip(AMOUNT_PER_PAGE * page)
+                .Skip(AMOUNT_PER_PAGE * (page - 1))
                 .Take(AMOUNT_PER_PAGE)
                 .ToList();
 

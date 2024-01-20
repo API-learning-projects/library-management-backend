@@ -33,6 +33,9 @@ namespace LibraryManagement
             // utils
             services.AddSingleton<BCryptService>();
             services.AddSingleton<JWTService>();
+
+            // test
+            services.AddSingleton<TestService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

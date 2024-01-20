@@ -16,8 +16,11 @@ namespace LibraryManagement.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllBooks([FromQuery] int page)
+        public IActionResult GetAllBooks([FromQuery] int page = 1)
         {
+            if (page < 1)
+                return BadRequest("Page must be greater than 0");
+
             return RunLogic(() => {
                 List<BookOutgoingDTO> books = bookService.GetAll(page);
                 return Ok(books);
