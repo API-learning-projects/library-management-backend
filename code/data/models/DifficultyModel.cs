@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace LibraryManagement.Data.Models
 {
-    public class GenreModel
+    public class DifficultyModel
     {
         [Key]
         public string Name { get; set; }

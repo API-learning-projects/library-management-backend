@@ -9,6 +9,7 @@ namespace LibraryManagement.Data
         public DbSet<AuthorModel> Authors { get; set; }
         public DbSet<BookModel> Books { get; set; }
         public DbSet<GenreModel> Genres { get; set; }
+        public DbSet<DifficultyModel> Difficulties { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

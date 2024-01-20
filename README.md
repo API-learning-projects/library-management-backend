@@ -24,9 +24,9 @@ It's purpose is to build a REST API that allows users to buy, borrow or sell boo
 
 ## Requirements
 
-- User must be able to get all available books.
-- User must be able to get information about a single book (Title, description, picture, price?, borrow?, categorie, difficulty, etc.).
-- User must be able to filter books (categorie, buy/borrow/sell, difficulty, average reading duration, etc.).
+- ~~User must be able to get all available books.~~
+- ~~User must be able to get information about a single book (Title, description, picture, price?, borrow?, genre, difficulty, etc.).~~
+- ~~User must be able to filter books (genre, difficulty, average reading duration, etc.).~~
 - User must be able to register an account.
 - Registration information must be validated in an efficient way.
 - User must be able to login to their account.

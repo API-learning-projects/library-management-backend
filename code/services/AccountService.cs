@@ -56,7 +56,12 @@ namespace LibraryManagement.Services
 
             string hashedPassword = bCryptService.Hash(password);
 
-            AccountModel account = new AccountModel(username, hashedPassword, email);
+            AccountModel account = new()
+            {
+                Username = username,
+                Password = hashedPassword,
+                Email = email
+            };
             applicationDbContext.Accounts.Add(account);
             applicationDbContext.SaveChanges();
         }
